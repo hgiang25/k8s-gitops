@@ -13,7 +13,7 @@ spec:
     path: apps/prod
 
   destination:
-    server: https://kubernetes.default.svc
+    name: prod-cluster
     namespace: prod
 
   syncPolicy:

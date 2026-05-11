@@ -4,7 +4,7 @@ kind: Kustomization
 namespace: dev
 
 resources:
-  - ../../base
+  - ../base
 
 images:
   - name: hgyang25/vote-app
