@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: result
-          image: 248195880649.dkr.ecr.ap-southeast-1.amazonaws.com/vote-app
+          image: 248195880649.dkr.ecr.ap-southeast-1.amazonaws.com/result-app
           imagePullPolicy: Always
           ports:
             - containerPort: 80
