@@ -7,9 +7,9 @@ resources:
   - ../base
 
 images:
-  - name: hgyang25/vote-app
+  - name: 248195880649.dkr.ecr.ap-southeast-1.amazonaws.com/vote-app
     newTag: dev
-  - name: hgyang25/result-app
+  - name: 248195880649.dkr.ecr.ap-southeast-1.amazonaws.com/vote-app
     newTag: dev
-  - name: hgyang25/worker-app
+  - name: 248195880649.dkr.ecr.ap-southeast-1.amazonaws.com/vote-app
     newTag: dev

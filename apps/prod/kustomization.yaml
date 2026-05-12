@@ -16,9 +16,9 @@ patches:
         value: 3
 
 images:
-  - name: hgyang25/vote-app
+  - name: 248195880649.dkr.ecr.ap-southeast-1.amazonaws.com/vote-app
     newTag: v1.0.0
-  - name: hgyang25/result-app
+  - name: 248195880649.dkr.ecr.ap-southeast-1.amazonaws.com/vote-app
     newTag: v1.0.0
-  - name: hgyang25/worker-app
+  - name: 248195880649.dkr.ecr.ap-southeast-1.amazonaws.com/vote-app
     newTag: v1.0.0
