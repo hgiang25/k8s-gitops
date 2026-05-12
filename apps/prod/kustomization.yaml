@@ -18,7 +18,9 @@ patches:
 images:
   - name: 248195880649.dkr.ecr.ap-southeast-1.amazonaws.com/vote-app
     newTag: v1.0.0
-  - name: 248195880649.dkr.ecr.ap-southeast-1.amazonaws.com/vote-app
+
+  - name: 248195880649.dkr.ecr.ap-southeast-1.amazonaws.com/result-app
     newTag: v1.0.0
-  - name: 248195880649.dkr.ecr.ap-southeast-1.amazonaws.com/vote-app
+
+  - name: 248195880649.dkr.ecr.ap-southeast-1.amazonaws.com/worker-app
     newTag: v1.0.0
