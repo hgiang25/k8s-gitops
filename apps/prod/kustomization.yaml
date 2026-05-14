@@ -8,7 +8,7 @@ resources:
 
 patches:
   - target:
-      kind: Deployment
+      kind: Rollout
       name: vote
     patch: |
       - op: replace

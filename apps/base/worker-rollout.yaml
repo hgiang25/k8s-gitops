@@ -1,23 +1,50 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+
 metadata:
   name: worker
+
 spec:
-  replicas: 1
+  replicas: 2
+
+  revisionHistoryLimit: 3
+
   selector:
     matchLabels:
       app: worker
+
   template:
     metadata:
       labels:
         app: worker
+
     spec:
       containers:
         - name: worker
+
           image: 248195880649.dkr.ecr.ap-southeast-1.amazonaws.com/worker-app
+
           imagePullPolicy: Always
+
           env:
             - name: REDIS_HOST
               value: redis
+
             - name: DB_HOST
               value: db
+
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+
+            limits:
+              cpu: 500m
+              memory: 512Mi
+
+  strategy:
+  canary:
+    steps:
+      - setWeight: 50
+      - pause:
+          duration: 30s

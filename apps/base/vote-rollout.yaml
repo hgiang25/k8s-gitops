@@ -1,0 +1,53 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+
+metadata:
+  name: vote
+
+spec:
+  replicas: 2
+
+  revisionHistoryLimit: 3
+
+  selector:
+    matchLabels:
+      app: vote
+
+  template:
+    metadata:
+      labels:
+        app: vote
+
+    spec:
+      containers:
+        - name: vote
+
+          image: 248195880649.dkr.ecr.ap-southeast-1.amazonaws.com/vote-app
+
+          imagePullPolicy: Always
+
+          ports:
+            - containerPort: 80
+
+          env:
+            - name: REDIS_HOST
+              value: redis
+
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+
+            limits:
+              cpu: 500m
+              memory: 512Mi
+
+  strategy:
+    blueGreen:
+      activeService: vote
+
+      previewService: vote-preview
+
+      autoPromotionEnabled: false
+
+      previewReplicaCount: 1

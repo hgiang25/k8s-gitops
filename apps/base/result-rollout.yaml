@@ -1,0 +1,53 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+
+metadata:
+  name: result
+
+spec:
+  replicas: 2
+
+  revisionHistoryLimit: 3
+
+  selector:
+    matchLabels:
+      app: result
+
+  template:
+    metadata:
+      labels:
+        app: result
+
+    spec:
+      containers:
+        - name: result
+
+          image: 248195880649.dkr.ecr.ap-southeast-1.amazonaws.com/result-app
+
+          imagePullPolicy: Always
+
+          ports:
+            - containerPort: 80
+
+          env:
+            - name: DB_HOST
+              value: db
+
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+
+            limits:
+              cpu: 500m
+              memory: 512Mi
+
+  strategy:
+    blueGreen:
+      activeService: result
+
+      previewService: result-preview
+
+      autoPromotionEnabled: false
+
+      previewReplicaCount: 1
