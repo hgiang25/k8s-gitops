@@ -61,6 +61,6 @@ spec:
 
       previewService: result-preview
 
-      autoPromotionEnabled: false
+      autoPromotionEnabled: true
 
       previewReplicaCount: 1
