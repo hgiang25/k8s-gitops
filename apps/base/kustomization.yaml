@@ -3,7 +3,9 @@ kind: Kustomization
 
 resources:
   - gp3-sc.yaml
-  - ingress-alb.yaml
+
+  - vote-ingress.yaml
+  - result-ingress.yaml
 
   # Rollouts
   - vote-rollout.yaml
