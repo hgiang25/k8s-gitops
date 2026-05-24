@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: vote
 spec:
-  type: ClusterIP
+  type: LoadBalancer
   selector:
     app: vote
   ports:
