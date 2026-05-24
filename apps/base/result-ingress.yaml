@@ -3,18 +3,19 @@ kind: Ingress
 metadata:
   name: result-ingress
   annotations:
+    kubernetes.io/ingress.class: alb
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/target-type: ip
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP":80}]'
 
     # 👇 PHẢI GIỐNG vote để dùng chung ALB
-    alb.ingress.kubernetes.io/group.name: voting-app
+    #alb.ingress.kubernetes.io/group.name: voting-app
     alb.ingress.kubernetes.io/group.order: "2"
 
     alb.ingress.kubernetes.io/healthcheck-path: /
     alb.ingress.kubernetes.io/inbound-cidrs: 0.0.0.0/0
 
-    alb.ingress.kubernetes.io/manage-backend-security-group-rules: "true"    
+    alb.ingress.kubernetes.io/manage-backend-security-group-rules: "true"
 
 spec:
   ingressClassName: alb
@@ -22,7 +23,7 @@ spec:
   rules:
     - http:
         paths:
-          - path: /result
+          - path: /
             pathType: Prefix
             backend:
               service:

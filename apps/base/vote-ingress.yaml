@@ -3,12 +3,13 @@ kind: Ingress
 metadata:
   name: vote-ingress
   annotations:
+    kubernetes.io/ingress.class: alb
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/target-type: ip
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP":80}]'
 
     # 👇 QUAN TRỌNG: GỘP CHUNG ALB
-    alb.ingress.kubernetes.io/group.name: voting-app
+    #alb.ingress.kubernetes.io/group.name: voting-app
     alb.ingress.kubernetes.io/group.order: "1"
 
     alb.ingress.kubernetes.io/healthcheck-path: /
@@ -22,7 +23,7 @@ spec:
   rules:
     - http:
         paths:
-          - path: /vote
+          - path: /
             pathType: Prefix
             backend:
               service:
