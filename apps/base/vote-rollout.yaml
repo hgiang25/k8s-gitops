@@ -58,10 +58,11 @@ spec:
   strategy:
     blueGreen:
       activeService: vote
-
       previewService: vote-preview
 
       autoPromotionEnabled: true
       autoPromotionSeconds: 10
+
+      scaleDownDelaySeconds: 30
 
       previewReplicaCount: 1
