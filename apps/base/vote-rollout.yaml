@@ -5,7 +5,7 @@ metadata:
   name: vote
 
 spec:
-  replicas: 4
+  replicas: 2
 
   revisionHistoryLimit: 3
 
@@ -61,7 +61,7 @@ spec:
       previewService: vote-preview
 
       autoPromotionEnabled: true
-      autoPromotionSeconds: 10
+      #autoPromotionSeconds: 10
 
       scaleDownDelaySeconds: 30
 
