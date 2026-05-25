@@ -4,26 +4,24 @@ kind: Kustomization
 namespace: prod
 
 resources:
-- ../base
+  - ../base
 
 patches:
-- patch: |
-    - op: replace
-      path: /spec/replicas
-      value: 3
-  target:
-    kind: Rollout
-    name: vote
-
-
+  - patch: |
+      - op: replace
+        path: /spec/replicas
+        value: 2
+    target:
+      kind: Rollout
+      name: vote
 
 images:
-- name: 248195880649.dkr.ecr.ap-southeast-1.amazonaws.com/result-app
-  newName: 248195880649.dkr.ecr.ap-southeast-1.amazonaws.com/result-app
-  newTag: v1.0.0
-- name: 248195880649.dkr.ecr.ap-southeast-1.amazonaws.com/vote-app
-  newName: 248195880649.dkr.ecr.ap-southeast-1.amazonaws.com/vote-app
-  newTag: v1.0.0
-- name: 248195880649.dkr.ecr.ap-southeast-1.amazonaws.com/worker-app
-  newName: 248195880649.dkr.ecr.ap-southeast-1.amazonaws.com/worker-app
-  newTag: v1.0.0
+  - name: 248195880649.dkr.ecr.ap-southeast-1.amazonaws.com/result-app
+    newName: 248195880649.dkr.ecr.ap-southeast-1.amazonaws.com/result-app
+    newTag: v1.0.0
+  - name: 248195880649.dkr.ecr.ap-southeast-1.amazonaws.com/vote-app
+    newName: 248195880649.dkr.ecr.ap-southeast-1.amazonaws.com/vote-app
+    newTag: v1.0.0
+  - name: 248195880649.dkr.ecr.ap-southeast-1.amazonaws.com/worker-app
+    newName: 248195880649.dkr.ecr.ap-southeast-1.amazonaws.com/worker-app
+    newTag: v1.0.0
