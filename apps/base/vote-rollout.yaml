@@ -5,7 +5,7 @@ metadata:
   name: vote
 
 spec:
-  replicas: 2
+  replicas: 4
 
   revisionHistoryLimit: 3
 
