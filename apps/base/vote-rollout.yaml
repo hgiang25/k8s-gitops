@@ -60,7 +60,7 @@ spec:
       activeService: vote
       previewService: vote-preview
 
-      autoPromotionEnabled: true
+      autoPromotionEnabled: false
       #autoPromotionSeconds: 10
 
       scaleDownDelaySeconds: 30
