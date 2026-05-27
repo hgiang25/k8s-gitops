@@ -11,10 +11,10 @@ resources:
 images:
 - name: 248195880649.dkr.ecr.ap-southeast-1.amazonaws.com/result-app
   newName: 248195880649.dkr.ecr.ap-southeast-1.amazonaws.com/result-app
-  newTag: 5da1a295ead88c36c7e900884e8b7e87d42cbab7
+  newTag: bedf59864c57597fbffdc735340f5730bd1654d5
 - name: 248195880649.dkr.ecr.ap-southeast-1.amazonaws.com/vote-app
   newName: 248195880649.dkr.ecr.ap-southeast-1.amazonaws.com/vote-app
-  newTag: 5da1a295ead88c36c7e900884e8b7e87d42cbab7
+  newTag: bedf59864c57597fbffdc735340f5730bd1654d5
 - name: 248195880649.dkr.ecr.ap-southeast-1.amazonaws.com/worker-app
   newName: 248195880649.dkr.ecr.ap-southeast-1.amazonaws.com/worker-app
-  newTag: 5da1a295ead88c36c7e900884e8b7e87d42cbab7
+  newTag: bedf59864c57597fbffdc735340f5730bd1654d5
